@@ -4,13 +4,13 @@ from email.mime.text import MIMEText
 
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
-sender_email = 'naveen072005123@gmail.com'
-sender_password = 'fzilhkarjkujhdop'  # Use an app password if 2FA is enabled
+sender_email = 'send_mail_id'
+sender_password = 'create_app_pass_and_update_here'  # Use an app password if 2FA is enabled
 
 subject = 'Important Account Verification'
 
 # Recipient email addresses and names
-recipients = [{'email': 'workwithnaveen7@gmail.com', 'name': 'Naveen'}]
+recipients = [{'email': 'recipient_mail@example.com', 'name': 'recipient_name'}]
 
 # Connect to the server and send the email
 try:
