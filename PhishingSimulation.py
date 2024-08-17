@@ -2,44 +2,50 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
-sender_email = 'enter the sender email'
-sender_password = 'create an app password and update it here'  #app pass
-subject = 'Urgent: Action Required'
+sender_email = 'naveen072005123@gmail.com'
+sender_password = 'fzilhkarjkujhdop'  # Use an app password if 2FA is enabled
 
-# Recipient email addresses
-recipients = ['recipient1@gmail.com', 'recipient2@example.com']
+subject = 'Important Account Verification'
 
+# Recipient email addresses and names
+recipients = [{'email': 'workwithnaveen7@gmail.com', 'name': 'Naveen'}]
 
-message = MIMEMultipart('alternative')
-message['From'] = sender_email
-message['To'] = ''  # Usually the 'To' field will be the sender or left blank
-message['Subject'] = subject
-
-# Email body
-email_content = """
-<html>
-<body>
-    <p>Dear User,</p>
-    <p>We have detected unusual activity in your account. Please verify your account by clicking on the link below:</p>
-    <p><a href="example_url_where_u_want_to_redirect_the_user">Verify Now</a></p>
-    <p>Regards,<br>IT Support</p>
-</body>
-</html>
-"""
-message.attach(MIMEText(email_content, 'html'))
-
+# Connect to the server and send the email
 try:
-    # Connect to the server and send the email
     server = smtplib.SMTP(smtp_server, smtp_port)
     server.starttls()
     server.login(sender_email, sender_password)
     
-    # Send the email with BCC
-    server.sendmail(sender_email, recipients, message.as_string())
+    for recipient in recipients:
+        recipient_email = recipient['email']
+        recipient_name = recipient['name']
+        
+        message = MIMEMultipart('alternative')
+        message['From'] = sender_email
+        message['To'] = recipient_email
+        message['Subject'] = subject
+
+        # Personalize the email body
+        email_content = f"""
+        <html>
+        <body>
+            <p>Hello {recipient_name},</p>
+            <p>We have detected some unusual activity in your account and require your assistance to ensure its security. Please verify your account by clicking the link below:</p>
+            <p><a href="https://workwithnaveen7.github.io/Phishy-LoginPage/" style="color: #007BFF; text-decoration: none; font-weight: bold;">Verify Your Account</a></p>
+            <p>If you did not request this action, please disregard this email. Your security is our priority.</p>
+            <p>Thank you,<br>The IT Support Team</p>
+            <p><small>For any questions, please contact us</small></p>
+        </body>
+        </html>
+        """
+        message.attach(MIMEText(email_content, 'html'))
+
+        # Send the email
+        server.sendmail(sender_email, recipient_email, message.as_string())
+        print(f"Email sent successfully to {recipient_name} ({recipient_email})")
+
     server.quit()
-    print("Email sent successfully")
 except Exception as e:
     print(f"Failed to send email: {str(e)}")
