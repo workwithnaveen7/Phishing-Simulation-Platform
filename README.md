@@ -1,5 +1,10 @@
 # 🎣 Phishing Simulation Platform
 
+Includes three repositories:
+https://github.com/workwithnaveen7/Phishy-LoginPage
+https://github.com/workwithnaveen7/Phishing-Attack-Awareness
+https://github.com/workwithnaveen7/Phishing-Simulation-Platform
+
 ### 🚨 Educate. Protect. Empower.
 
 Welcome to the Phishing Simulation Platform—a powerful and interactive tool designed to educate users about the dangers of phishing attacks. In a world where cyber threats are just a click away, this platform helps users recognize and avoid phishing traps by giving them a safe, hands-on experience.
