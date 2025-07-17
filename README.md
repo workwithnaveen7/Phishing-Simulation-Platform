@@ -1,9 +1,10 @@
 # 🎣 Phishing Simulation Platform
 
 Includes three repositories:
-https://github.com/workwithnaveen7/Phishy-LoginPage
-https://github.com/workwithnaveen7/Phishing-Attack-Awareness
-https://github.com/workwithnaveen7/Phishing-Simulation-Platform
+
+- https://github.com/workwithnaveen7/Phishy-LoginPage
+- https://github.com/workwithnaveen7/Phishing-Attack-Awareness
+- https://github.com/workwithnaveen7/Phishing-Simulation-Platform
 
 ### 🚨 Educate. Protect. Empower.
 
